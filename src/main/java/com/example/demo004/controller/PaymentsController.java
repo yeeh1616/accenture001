@@ -25,14 +25,14 @@ public class PaymentsController {
     // Amount paid per user
     @GetMapping(value = "/payments")
     public ResponseEntity<Object> getPayments() {
-        List<Payments> payments = this.paymentsRepository.findOwes();
+        List<Payments> payments = this.paymentsRepository.findTotalAmount();
         return ResponseEntity.ok(payments);
     }
 
     // Amount that each users still owes
     @GetMapping(value = "/owes")
     public ResponseEntity<Object> getOwes() {
-        List<Payments> payments = this.paymentsRepository.findOwes();
-        return ResponseEntity.ok(payments);
+        List<Payments> owes = this.paymentsRepository.findOwes();
+        return ResponseEntity.ok(owes);
     }
 }

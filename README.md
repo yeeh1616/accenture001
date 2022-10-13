@@ -10,4 +10,6 @@ The following steps describes how to run the API:
 ![img_1.png](img_1.png)
 5. Select the "accenture001.sql" file in the root path:
 ![img_2.png](img_2.png)
-6. Now you can access the API of "Amount paid per user" by 
+6. Now you can access the API:
+* https://localhost:8080/payments, the amount paid per user
+* https://localhost:8080/owes, the amount that each users still owes
