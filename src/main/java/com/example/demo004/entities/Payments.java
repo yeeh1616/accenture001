@@ -9,21 +9,15 @@ public class Payments {
     private String user;
     private Float amount;
 
-    public Float getOwe() {
-        return owe;
-    }
-
-    public void setOwe(Float owe) {
-        this.owe = owe;
-    }
-
-    private Float owe;
-
     public Payments() {}
 
-    public Payments(String user, Float amount) {
-        this.user = user;
-        this.amount = amount;
+    @Id
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUser() {
@@ -40,14 +34,5 @@ public class Payments {
 
     public void setAmount(Float amount) {
         this.amount = amount;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Id
-    public Long getId() {
-        return id;
     }
 }

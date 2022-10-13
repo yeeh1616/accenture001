@@ -19,7 +19,7 @@ public interface PaymentsRepository extends CrudRepository<Payments, String> {
             "\tGROUP BY o.user;", nativeQuery = true)
     List<Payments> findTotalAmount();
 
-    @Query(value = "SELECT a.id AS id, a.user AS user, a.price as amount, (b.price - a.price) AS owe\n" +
+    @Query(value = "SELECT a.id AS id, a.user AS user, (b.price - a.price) AS amount\n" +
             "FROM\n" +
             "(SELECT MIN(public.payments.id) as id, public.payments.user AS user, SUM(amount) as price\n" +
             "\tFROM public.payments\n" +
